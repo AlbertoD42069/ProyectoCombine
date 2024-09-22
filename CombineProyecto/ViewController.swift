@@ -11,8 +11,8 @@ import Combine
 
 class ViewController: UIViewController {
     
-    private let combineView: CombineBasic = {
-        let view: CombineBasic = CombineBasic()
+    private let combineView: CombineBasicTwo = {
+        let view: CombineBasicTwo = CombineBasicTwo()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

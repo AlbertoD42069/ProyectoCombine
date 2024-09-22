@@ -11,11 +11,27 @@ import Combine
 
 class ViewController: UIViewController {
     
-    
+    private let combineView: CombineBasic = {
+        let view: CombineBasic = CombineBasic()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        addSubViewCustom()
+        setupAutolayout()
         // Do any additional setup after loading the view.
+    }
+    func addSubViewCustom() {
+        view.addSubview(combineView)
+    }
+    func setupAutolayout() {
+        NSLayoutConstraint.activate([
+            combineView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            combineView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            combineView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            combineView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
     }
     //forma uno de suscribirse a publisher
    
